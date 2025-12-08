@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block GitHub Pages system folders
+Disallow: /assets/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
