@@ -105,22 +105,26 @@
         }
 
         /* Hero Section */
-        .hero {
+        /* Desktop Hero */
+         .hero {
             background: linear-gradient(rgba(45, 80, 22, 0.6), rgba(45, 80, 22, 0.6)),
-                        url('images/hero-banner.png') center/cover;
-            /* 
-            TO ADD YOUR BANNER IMAGE:
-            Replace 'images/hero-banner.png' with your image path
-            Example paths:
-            - Same folder: url('banner.png')
-            - In images folder: url('images/banner.png')
-            - Online image: url('https://example.com/image.png')
-            */
+                url('images/hero-banner.avif') center/cover;
             padding: 120px 20px 80px;
             text-align: center;
             color: var(--white);
             background-attachment: fixed;
+            }
+
+            /* Mobile Hero Fix */
+            @media (max-width: 768px) {
+            .hero {
+            background-size: contain;   /* show entire image */
+            background-repeat: no-repeat;
+            background-position: top center; /* or center */
+            background-attachment: scroll;   /* fixes mobile zoom issue */
         }
+    }
+
 
         .hero h2 {
             font-size: 3rem;
@@ -696,53 +700,44 @@
                 <!-- EXAMPLE: How to add vehicle image -->
                 <div class="vehicle-card">
                     <!-- OPTION 1: With Image (Uncomment and add your image path) -->
-                    <!-- <img src="images/49-seater-bus.jpg" alt="49 Seater Bus" class="vehicle-img"> -->
-                    
-                    <!-- OPTION 2: With Icon (Current - Remove when you add image) -->
-                    <div class="vehicle-icon">🚌</div>
-                    
+                    <img src="images/49seater.jpg" alt="49 Seater Bus" class="vehicle-img">                    
                     <h3>49 Seater Bus</h3>
                     <p>AC Pushback</p>
                 </div>
                 
                 <!-- Add images to other vehicles the same way -->
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
+                    <img src="images/34seater.avif" alt="34 Seater Mini Bus" class="vehicle-img">                    
                     <h3>34 Seater Mini Bus</h3>
                     <p>AC</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
-                    <h3>26 Seater Traveller</h3>
+                    <img src="images/26seater.avif" alt="26 Seater Traveller" class="vehicle-img">
+                    <h3>26,20 Seater Traveller</h3>
                     <p>AC</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
+                    <img src="images/24seater.avif" alt="24 Seater Mini Bus" class="vehicle-img">
                     <h3>24 Seater Mini Bus</h3>
                     <p>AC</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
-                    <h3>20 Seater Traveller</h3>
-                    <p>AC</p>
-                </div>
-                <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
+                    <img src="images/17seater.avif" alt="17 Seater Traveller" class="vehicle-img">
                     <h3>17 Seater Traveller</h3>
                     <p>AC</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚐</div>
+                   <img src="images/17seater.avif" alt="12 Seater Traveller" class="vehicle-img">
                     <h3>12 Seater Traveller</h3>
                     <p>AC</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚗</div>
+                    <img src="images/crysta.avif" alt="innova crysta" class="vehicle-img">
                     <h3>Innova Crysta</h3>
                     <p>7+1 Seater</p>
                 </div>
                 <div class="vehicle-card">
-                    <div class="vehicle-icon">🚗</div>
+                    <img src="images/etios.avif" alt="etios" class="vehicle-img">
                     <h3>Etios</h3>
                     <p>5 Seater</p>
                 </div>
@@ -809,13 +804,13 @@
                         <!-- TO ADD HOUSEBOAT IMAGES: Replace placeholders with img tags -->
                         
                         <!-- EXAMPLE WITH IMAGES (Uncomment and use): -->
-                        <!-- <img src="images/houseboat-1.jpg" alt="Kerala Houseboat" class="houseboat-img"> -->
-                        <!-- <img src="images/backwaters-1.jpg" alt="Kerala Backwaters" class="houseboat-img"> -->
-                        <!-- <img src="images/houseboat-sunset.jpg" alt="Sunset Cruise" class="houseboat-img"> -->
-                        <!-- <img src="images/kerala-cuisine.jpg" alt="Kerala Cuisine" class="houseboat-img"> -->
+                        <img src="images/houseboat.webp" alt="Kerala Houseboat" class="houseboat-img"> 
+                        <img src="images/backwaters.avif" alt="Kerala Backwaters" class="houseboat-img">
+                        <img src="images/sunsetcruise.avif" alt="Sunset Cruise" class="houseboat-img">
+                        <img src="images/cuisine.avif" alt="Kerala Cuisine" class="houseboat-img">
                         
                         <!-- CURRENT PLACEHOLDERS (Remove when you add images): -->
-                        <div class="img-placeholder">
+                        <!--<div class="img-placeholder">
                             🛥️<br>Traditional Kerala<br>Houseboat
                         </div>
                         <div class="img-placeholder">
@@ -826,7 +821,7 @@
                         </div>
                         <div class="img-placeholder">
                             🍽️<br>Kerala<br>Cuisine
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -879,7 +874,7 @@
             <p>Helping People Travel Better Together</p>
             <p>Thiruvathukkal, Kottayam, Kerala</p>
             <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                © 2024 Green World Travel Hub. All rights reserved.
+                © 2025 Green World Travel Hub. All rights reserved.
             </p>
         </div>
     </footer>
