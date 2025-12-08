@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        img-src 'self' data:;
+        style-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline';
+        font-src 'self';
+        connect-src 'self';
+        media-src 'self';
+        object-src 'none';
+        frame-ancestors 'none';
+      ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Green World Travel Hub – Kerala's trusted travel partner for tour packages, vehicle rentals, houseboats, and custom trips. Based in Thiruvathukkal, Kottayam.">
+    <meta name="keywords" content="Kerala tours, Kottayam travel agency, Kerala tour packages, vehicle rental Kerala, houseboat booking, Kerala tourism, kottayam cab, Kerala travel services, educational trips Kerala, devotional tours Kerala, honeymoon packages Kerala, rental kottayam, Kerala sightseeing, Kerala backwaters, Kerala travel hub">
+    <meta name="author" content="Green World Travel Hub">
+
+    <meta property="og:title" content="Green World Travel Hub – Helping People Travel Better Together">
+    <meta property="og:description" content="Explore Kerala and beyond with premium tour packages, vehicle rentals, and houseboat services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-bg.png">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <link rel="canonical" href="https://yourdomain.com/">
+    <title>Green World Travel Hub | Kerala Travel Agency - Tour Packages & Vehicle Rentals</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c23;
+            --accent-gold: #d4af37;
+            --light-bg: #f5f9f3;
+            --dark-text: #2c3e1f;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 80, 22, 0.6), rgba(45, 80, 22, 0.6)),
+                        url('images/hero-banner.png') center/cover;
+            /* 
+            TO ADD YOUR BANNER IMAGE:
+            Replace 'images/hero-banner.png' with your image path
+            Example paths:
+            - Same folder: url('banner.png')
+            - In images folder: url('images/banner.png')
+            - Online image: url('https://example.com/image.png')
+            */
+            padding: 120px 20px 80px;
+            text-align: center;
+            color: var(--white);
+            background-attachment: fixed;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--dark-text);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--light-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--secondary-green);
+            font-weight: 600;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary-green);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-green);
+            font-weight: bold;
+        }
+
+        /* Vehicles Grid */
+        .vehicles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .vehicle-card {
+            background: linear-gradient(135deg, var(--light-bg), var(--white));
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .vehicle-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-gold);
+        }
+
+        .vehicle-card h3 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .vehicle-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Vehicle Images */
+        .vehicle-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Packages Section */
+        .packages-container {
+            display: grid;
+            gap: 40px;
+        }
+
+        .package-category {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .package-category h3 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .package-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .package-item {
+            background: var(--light-bg);
+            padding: 12px 20px;
+            border-radius: 25px;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .package-item:hover {
+            background: var(--secondary-green);
+            color: var(--white);
+            border-color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+        /* Houseboat Section */
+        .houseboat-section {
+            background: linear-gradient(135deg, var(--light-bg), var(--white));
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .houseboat-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .houseboat-text h3 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .houseboat-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .houseboat-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .houseboat-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Placeholder style for images not yet added */
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #4a7c23, #2d5016);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--light-bg);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--secondary-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-gold);
+        }
+
+  /* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    text-decoration: none;
+    overflow: hidden; /* Important for GIF fit */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+/* GIF inside the button */
+.whatsapp-float .whatsapp-gif {
+    width: 70%;         /* Adjust size inside circle */
+    height: 70%;
+    object-fit: contain;
+    pointer-events: none; /* prevent accidental blocking clicks */
+}
+
+
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+
+            nav {
+                width: 100%;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .houseboat-content {
+                grid-template-columns: 1fr;
+            }
+
+            .houseboat-images {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            .about-content, .houseboat-section {
+                padding: 25px;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Green World Travel Hub",
+  "url": "https://yourdomain.com",
+  "image": "https://yourdomain.com/assets/images/hero-bg.png",
+  "description": "Kerala's trusted travel partner for tour packages, vehicle rentals in Kottayam, and houseboat experiences.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Thiruvathukkal, Kottayam",
+    "addressRegion": "Kerala",
+    "addressCountry": "India"
+  },
+  "telephone": "+91 00000 00000"
+}
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>🌍 Green World Travel Hub</h1>
+                <p>Helping People Travel Better Together</p>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#vehicles">Vehicles</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Explore Kerala & Beyond</h2>
+        <p>Your Trusted Travel Partner for Unforgettable Journeys</p>
+        <a href="#contact" class="cta-button">Plan Your Trip</a>
+    </section>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Welcome to <strong>Green World Travel Hub</strong>, your premier travel partner based in the heart of Kerala. We specialize in creating memorable travel experiences across South India and beyond, offering customized tour packages that suit every traveler's needs.</p>
+                <p>With years of experience in the tourism industry, we pride ourselves on providing exceptional service, comfortable transportation, and well-planned itineraries that showcase the natural beauty and cultural richness of Kerala and neighboring states.</p>
+                <p>Whether you're planning a school trip, a romantic honeymoon, a spiritual journey, or a family vacation, we're here to make your travel dreams come true.</p>
+                <div class="location">
+                    📍 Located at: Thiruvathukkal, Kottayam, Kerala
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎓 Educational Trips</h3>
+                    <ul>
+                        <li>School & College Trips</li>
+                        <li>All India Tour Packages</li>
+                        <li>Educational Tour Planning</li>
+                        <li>Safe & Supervised Travel</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🕉️ Devotional Tours</h3>
+                    <ul>
+                        <li>Temple Tour Packages</li>
+                        <li>Spiritual Journeys</li>
+                        <li>Train Package Tours</li>
+                        <li>Customized Pilgrimage</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>❤️ Special Packages</h3>
+                    <ul>
+                        <li>Honeymoon Packages</li>
+                        <li>Houseboat Experiences</li>
+                        <li>Kayaking Adventures</li>
+                        <li>Country Boat Tours</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🚗 Vehicle Rental</h3>
+                    <ul>
+                        <li>Rent a Car Services</li>
+                        <li>Luxury & Budget Options</li>
+                        <li>Experienced Drivers</li>
+                        <li>Flexible Rental Plans</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="vehicles">
+            <h2 class="section-title">Our Fleet</h2>
+            <div class="vehicles-grid">
+                <!-- EXAMPLE: How to add vehicle image -->
+                <div class="vehicle-card">
+                    <!-- OPTION 1: With Image (Uncomment and add your image path) -->
+                    <!-- <img src="images/49-seater-bus.jpg" alt="49 Seater Bus" class="vehicle-img"> -->
+                    
+                    <!-- OPTION 2: With Icon (Current - Remove when you add image) -->
+                    <div class="vehicle-icon">🚌</div>
+                    
+                    <h3>49 Seater Bus</h3>
+                    <p>AC Pushback</p>
+                </div>
+                
+                <!-- Add images to other vehicles the same way -->
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>34 Seater Mini Bus</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>26 Seater Traveller</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>24 Seater Mini Bus</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>20 Seater Traveller</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>17 Seater Traveller</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚐</div>
+                    <h3>12 Seater Traveller</h3>
+                    <p>AC</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚗</div>
+                    <h3>Innova Crysta</h3>
+                    <p>7+1 Seater</p>
+                </div>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">🚗</div>
+                    <h3>Etios</h3>
+                    <p>5 Seater</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <h2 class="section-title">Tour Packages</h2>
+            <div class="packages-container">
+                <div class="package-category">
+                    <h3>🌄 1 Day Packages</h3>
+                    <div class="package-list">
+                        <span class="package-item">Vagamon</span>
+                        <span class="package-item">Vazhachal</span>
+                        <span class="package-item">Kanyakumari</span>
+                        <span class="package-item">Munnar</span>
+                        <span class="package-item">Thekkady</span>
+                        <span class="package-item">Mysore</span>
+                        <span class="package-item">Wayanad</span>
+                        <span class="package-item">Coorg</span>
+                    </div>
+                </div>
+
+                <div class="package-category">
+                    <h3>🏔️ 2 Day Packages</h3>
+                    <div class="package-list">
+                        <span class="package-item">Kodaikanal - Munnar</span>
+                        <span class="package-item">Udupi - Coorg</span>
+                        <span class="package-item">Wayanad - Ooty</span>
+                        <span class="package-item">Coorg - Chikmanglore</span>
+                    </div>
+                </div>
+
+                <div class="package-category">
+                    <h3>⛰️ 3 Day Packages</h3>
+                    <div class="package-list">
+                        <span class="package-item">Coorg - Mysore - Bangalore</span>
+                        <span class="package-item">Wayanad - Coorg - Chikmangluru</span>
+                        <span class="package-item">Bangalore - Chikmangluru - Belur</span>
+                        <span class="package-item">Ooty - Kodaikanal - Munnar</span>
+                        <span class="package-item">Wayanad - Coorg - Munnar</span>
+                        <span class="package-item">Udupi - Dandeli - Gokarna</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="houseboat">
+            <h2 class="section-title">Houseboat Experience</h2>
+            <div class="houseboat-section">
+                <div class="houseboat-content">
+                    <div class="houseboat-text">
+                        <h3>🛥️ Kerala Backwaters</h3>
+                        <p>Experience the serene beauty of Kerala's backwaters aboard our luxurious houseboats. Choose from day cruises or overnight stays and immerse yourself in the tranquil waters surrounded by lush greenery.</p>
+                        <p><strong>Available Options:</strong></p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li style="margin-bottom: 8px;">Day Cruise Packages</li>
+                            <li style="margin-bottom: 8px;">Overnight Stay Packages</li>
+                            <li style="margin-bottom: 8px;">Traditional Kerala Cuisine</li>
+                            <li style="margin-bottom: 8px;">Scenic Backwater Routes</li>
+                        </ul>
+                    </div>
+                    <div class="houseboat-images">
+                        <!-- TO ADD HOUSEBOAT IMAGES: Replace placeholders with img tags -->
+                        
+                        <!-- EXAMPLE WITH IMAGES (Uncomment and use): -->
+                        <!-- <img src="images/houseboat-1.jpg" alt="Kerala Houseboat" class="houseboat-img"> -->
+                        <!-- <img src="images/backwaters-1.jpg" alt="Kerala Backwaters" class="houseboat-img"> -->
+                        <!-- <img src="images/houseboat-sunset.jpg" alt="Sunset Cruise" class="houseboat-img"> -->
+                        <!-- <img src="images/kerala-cuisine.jpg" alt="Kerala Cuisine" class="houseboat-img"> -->
+                        
+                        <!-- CURRENT PLACEHOLDERS (Remove when you add images): -->
+                        <div class="img-placeholder">
+                            🛥️<br>Traditional Kerala<br>Houseboat
+                        </div>
+                        <div class="img-placeholder">
+                            🌴<br>Scenic<br>Backwaters
+                        </div>
+                        <div class="img-placeholder">
+                            🌅<br>Sunset<br>Cruises
+                        </div>
+                        <div class="img-placeholder">
+                            🍽️<br>Kerala<br>Cuisine
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📞 Call Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <a href="tel:7306074285">7306074285</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>💬 WhatsApp</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📲</span>
+                            <a href="https://wa.me/919995896706" target="_blank">9995896706</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Visit Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            Thiruvathukkal<br>
+                            Kottayam, Kerala
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919995896706" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp" class="whatsapp-gif">
+    </a>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <h3>Green World Travel Hub</h3>
+            <p>Helping People Travel Better Together</p>
+            <p>Thiruvathukkal, Kottayam, Kerala</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                © 2024 Green World Travel Hub. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .vehicle-card, .package-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
