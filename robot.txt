@@ -5,4 +5,4 @@ Allow: /
 Disallow: /assets/
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://greenworldtravelhub.com/sitemap.xml
